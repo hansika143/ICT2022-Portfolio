@@ -27,7 +27,7 @@ A couple of small cosmetic issues were also cleaned up:
 ```
 Portfolio3/
 ├── client/            # Static HTML/CSS/JS front end (Interfaces 1-4)
-│   ├── home.html / home.css
+│   ├── index.html / home.css
 │   ├── about.html / about.css
 │   ├── projects.html / projects.css / projects.js
 │   ├── admin.html / admin.css / admin.js
@@ -55,7 +55,7 @@ Portfolio3/
    npm run dev
    ```
 4. Open the site in your browser:
-   - Home: http://localhost:5000/home.html
+   - Home: http://localhost:5000/index.html
    - About: http://localhost:5000/about.html
    - Projects: http://localhost:5000/projects.html
    - Admin: http://localhost:5000/admin.html

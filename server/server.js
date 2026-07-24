@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.json()); // parse incoming JSON request bodies
 
 // ---------- Serve the frontend (client folder) as static files ----------
-// This lets you open http://localhost:5000/home.html directly
+// This lets you open http://localhost:5000/index.html directly
 app.use(express.static(path.join(__dirname, "../client")));
 
 // ---------- API routes ----------
