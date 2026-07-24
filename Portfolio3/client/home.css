@@ -1,0 +1,226 @@
+/* =============================================================
+   HOME PAGE STYLES (Interface 1) — Modern redesign
+   Soft gradient backdrop, glass-effect cards, gradient accent
+   ring around the photo, animated entrance.
+============================================================== */
+
+:root {
+  --bg-1: #eef2ff;
+  --bg-2: #fdf2f8;
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --text-main: #14152b;
+  --text-muted: #64687d;
+  --accent-1: #6366f1;
+  --accent-2: #ec4899;
+  --accent-gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  --radius-lg: 26px;
+  --shadow-soft: 0 20px 45px rgba(76, 60, 150, 0.12);
+  --shadow-hover: 0 26px 60px rgba(76, 60, 150, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(99, 102, 241, 0.18), transparent 45%),
+    radial-gradient(circle at 88% 18%, rgba(236, 72, 153, 0.16), transparent 40%),
+    linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  background-attachment: fixed;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 28px 16px 0;
+}
+
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 11px 22px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+}
+
+.nav-brand {
+  font-weight: 800;
+  margin-right: 6px;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 2px;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: var(--text-main);
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ---------- Layout ---------- */
+.page-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 70px 20px 110px;
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 32px;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ---------- Hero section ---------- */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 33px;
+  align-items: center;
+  animation: rise 0.9s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.avatar-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  position: relative;
+}
+
+/* Gradient ring behind the photo */
+.avatar-card::before {
+  content: "";
+  position: absolute;
+  width: min(100%, 280px);
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+  background: var(--accent-gradient);
+  filter: blur(2px);
+  z-index: 0;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.avatar-photo {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 6px solid #fff;
+  box-shadow: 0 12px 30px rgba(76, 60, 150, 0.25);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-1);
+}
+
+.hero-name {
+  margin: 0 0 8px;
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-role {
+  margin: 0 0 18px;
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.hero-bio {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 46ch;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-name {
+    font-size: 28px;
+  }
+}

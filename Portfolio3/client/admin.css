@@ -1,0 +1,269 @@
+/* =============================================================
+   ADMIN PAGE STYLES (Interface 4)
+   Same visual language as the rest of the portfolio: soft
+   lavender background, white rounded cards, blue primary accent.
+============================================================== */
+
+:root {
+  --bg: #eef0fa;
+  --card-bg: #ffffff;
+  --text-main: #1f2333;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --accent: #2f6feb;
+  --accent-hover: #2559c7;
+  --danger: #f43f5e;
+  --danger-bg: #fee2e2;
+  --edit-bg: #dbeafe;
+  --edit-color: #2563eb;
+  --radius-lg: 18px;
+  --radius-md: 10px;
+  --shadow: 0 10px 30px rgba(31, 35, 51, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px 0;
+}
+
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: var(--card-bg);
+  padding: 10px 20px;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+
+.nav-brand {
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: var(--accent);
+}
+
+/* ---------- Layout ---------- */
+.page-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.card-title {
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.card-subtitle {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ---------- Form ---------- */
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 16px 0 6px;
+}
+
+.form-label:first-of-type {
+  margin-top: 0;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-main);
+  background: #f9fafb;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(47, 111, 235, 0.15);
+  background: #fff;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.btn {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 11px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: #f1f2f6;
+  color: var(--text-main);
+}
+
+.btn-secondary:hover {
+  background: #e5e7eb;
+}
+
+.form-status {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.form-status.success {
+  color: #16a34a;
+}
+
+.form-status.error {
+  color: var(--danger);
+}
+
+/* ---------- Admin project list ---------- */
+#admin-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-project-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  position: relative;
+}
+
+.admin-project-item .item-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0 0 6px;
+  padding-right: 110px;
+}
+
+.admin-project-item .item-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 8px;
+}
+
+.admin-project-item .item-tech {
+  font-size: 12px;
+  color: var(--accent);
+  margin: 0 0 4px;
+}
+
+.admin-project-item .item-link {
+  font-size: 12px;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+.item-actions {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  display: flex;
+  gap: 8px;
+}
+
+.badge-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.badge-edit {
+  background: var(--edit-bg);
+  color: var(--edit-color);
+}
+
+.badge-edit:hover {
+  background: #bfdbfe;
+}
+
+.badge-delete {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.badge-delete:hover {
+  background: #fecaca;
+}
+
+.empty-state {
+  color: var(--text-muted);
+  font-size: 14px;
+  text-align: center;
+  padding: 12px 0 4px;
+}

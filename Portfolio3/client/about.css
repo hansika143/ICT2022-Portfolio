@@ -1,0 +1,385 @@
+/* =============================================================
+   MODERN ABOUT PAGE STYLES
+============================================================== */
+
+:root {
+  --bg: #eef0fa;
+  --card-bg: #ffffff;
+  --text-main: #1f2333;
+  --text-muted: #6b7280;
+  --accent: #2f6feb;
+  --accent-bg: #dbeafe;
+  --radius-lg: 18px;
+  --radius-md: 10px;
+  --shadow: 0 10px 30px rgba(31, 35, 51, 0.06);
+}
+
+
+
+
+
+/* ---------- Global ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  min-height: 100vh;
+
+}
+
+
+
+/* ---------- Navbar ---------- */
+
+
+.navbar {
+
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px 0;
+
+}
+
+
+.nav-pill {
+
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  background: rgba(255,255,255,0.75);
+
+  backdrop-filter: blur(12px);
+
+  padding: 14px 28px;
+
+  border-radius: 50px;
+
+  box-shadow: var(--shadow);
+
+  border: 1px solid rgba(255,255,255,0.5);
+
+}
+
+
+
+.nav-brand {
+
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--accent);
+
+  margin-right: 20px;
+
+}
+
+
+
+.nav-link {
+
+  text-decoration: none;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+
+}
+
+
+
+.nav-link:hover,
+.nav-link.active {
+
+  color: var(--accent);
+
+  transform: translateY(-2px);
+
+}
+
+
+/* ---------- Main Layout ---------- */
+
+
+.page-wrapper {
+
+  max-width: 950px;
+
+  margin: auto;
+
+  padding: 50px 20px 100px;
+
+}
+
+
+
+/* ---------- Cards ---------- */
+
+
+.card {
+
+  background: var(--card-bg);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow);
+
+  padding: 32px;
+
+  margin-bottom: 25px;
+
+  border: 1px solid rgba(255,255,255,0.6);
+
+  transition: 0.35s;
+
+}
+
+
+
+.card:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow: 0 20px 45px rgba(37,99,235,0.15);
+
+}
+
+
+
+
+/* ---------- Titles ---------- */
+
+
+.card-title {
+
+  margin:0 0 15px;
+
+  font-size:28px;
+
+  font-weight:800;
+
+  color:#0f172a;
+
+}
+
+
+
+.card-subtitle {
+
+  margin-bottom:18px;
+
+  font-size:20px;
+
+  font-weight:700;
+
+  color:var(--accent-dark);
+
+}
+
+
+
+.card-text {
+
+  font-size:15px;
+
+  line-height:1.8;
+
+  color:var(--text-muted);
+
+}
+
+
+
+
+/* ---------- Education and Skills ---------- */
+
+
+.two-col-grid {
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:25px;
+
+}
+
+
+
+.education-item {
+
+  padding:15px;
+
+  border-left:4px solid var(--accent);
+
+  background:#f8fafc;
+
+  border-radius:12px;
+
+  margin-bottom:15px;
+
+}
+
+
+
+.education-item h4 {
+
+  margin:0 0 8px;
+
+  color:#111827;
+
+  font-size:16px;
+
+}
+
+
+
+.education-item p {
+
+  margin:4px 0;
+
+  color:var(--text-muted);
+
+  font-size:14px;
+
+}
+
+
+
+
+/* ---------- Skills ---------- */
+
+
+.pill-badge-group {
+
+ display:flex;
+
+ flex-wrap:wrap;
+
+ gap:12px;
+
+}
+
+
+
+.pill-badge {
+
+ background:var(--accent-bg);
+
+ color:var(--accent-dark);
+
+ padding:8px 16px;
+
+ border-radius:30px;
+
+ font-size:13px;
+
+ font-weight:600;
+
+ transition:0.3s;
+
+}
+
+
+
+.pill-badge:hover {
+
+ background:var(--accent);
+
+ color:white;
+
+ transform:scale(1.05);
+
+}
+
+
+
+
+/* ---------- Contact ---------- */
+
+
+.contact-line {
+
+ margin:12px 0;
+
+ font-size:15px;
+
+ color:var(--text-muted);
+
+}
+
+
+
+.contact-line strong {
+
+ color:#111827;
+
+}
+
+
+
+.contact-line a {
+
+ color:var(--accent);
+
+ text-decoration:none;
+
+ font-weight:600;
+
+}
+
+
+
+.contact-line a:hover {
+
+ color:var(--accent-dark);
+
+ text-decoration:underline;
+
+}
+
+
+
+/* ---------- Responsive ---------- */
+
+
+@media(max-width:700px){
+
+
+.nav-pill{
+
+ flex-wrap:wrap;
+
+ justify-content:center;
+
+}
+
+
+.two-col-grid{
+
+ grid-template-columns:1fr;
+
+}
+
+
+.card{
+
+ padding:25px;
+
+}
+
+
+}
