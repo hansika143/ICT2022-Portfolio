@@ -23,13 +23,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/pages-config-action@v5
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # මෙතැනින් අපි කියන්නේ 'client' folder එක විතරක් deploy කරන්න කියලා
           path: 'client'
 
       - name: Deploy to GitHub Pages
